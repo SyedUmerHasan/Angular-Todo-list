@@ -1,0 +1,11 @@
+<li [ngClass]="getDynamicClasses()">
+
+    <div class="form-check">
+        <label class="form-check-label"> <input class="checkbox" type="checkbox" (click)="completeItem()" />
+        {{todo.title}}
+
+      <i class="input-helper"></i>
+    </label>
+    </div>
+    <i class="remove mdi mdi-close-circle-outline" (click)="deleteItem()"></i>
+</li>

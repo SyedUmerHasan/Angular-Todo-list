@@ -1,0 +1,23 @@
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-lg-12">
+                <div class="card px-3">
+                    <div class="card-body">
+                        <h4 class="card-title">Awesome Todo list</h4>
+                        <div class="add-items d-flex">
+                            <input type="text" class="form-control todo-list-input" [(ngModel)]="name" placeholder=" What do you need to do today? "> <button class="add btn btn-primary font-weight-bold todo-list-add-btn " (click)="onClick() ">Add</button>                            </div>
+                        <br> {{name}}
+                        <div class="list-wrapper ">
+                            <ul class="d-flex flex-column-reverse todo-list " *ngFor="let todo of todos ">
+                                <app-todoitem [todo]="todo" [onSelection]="onSelectUser"></app-todoitem>
+                            </ul>
+                        </div>
+                    </div>
+                    <a id="exportJson " class="btn btn-primary " href="# " role="button ">Export Todo</a>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
