@@ -10,8 +10,8 @@ import { EventEmitter } from 'protractor';
 
 export class TodolistComponent implements OnInit {
   todos: Todo[];
-  name: string = "";
-  id: number=5;
+  name = '';
+  id = 5;
   constructor() { }
 
   ngOnInit() {
@@ -38,25 +38,22 @@ export class TodolistComponent implements OnInit {
       }
     ];
   }
-  onClick()
-  {
-    let someText = this.name.replace(/(\r\n|\n|\r)/gm, "");
-    if(someText == "")
-    {
+  onClick() {
+    const someText = this.name.replace(/(\r\n|\n|\r)/gm, '');
+    if (someText === '') {
 
-    }
-    else{
+    } else {
       this.todos.push(
         {
           id: this.id++,
           title: this.name,
           complete: false
         });
-        this.name ="";
+      this.name = '';
     }
   }
-  onSelectUser = (abc) =>{
-    console.log('Calling parent function ' + abc);
+  onSelectUser = (deleteId: number) => {
+    this.todos =  this.todos.filter(item => item.id !== deleteId);
   }
 
 

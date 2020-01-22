@@ -31,6 +31,6 @@ export class TodoitemComponent implements OnInit {
     }
   }
   deleteItem(){
-    this.onSelection("umer");
+    this.onSelection(this.todo.id);
   }
 }
