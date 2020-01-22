@@ -9,7 +9,7 @@ import { EventEmitter } from 'protractor';
 })
 export class TodoitemComponent implements OnInit {
   @Input() todo: Todo;
-  @Input() onSelection: (abc) => {};
+  @Input() onSelection: (onDeleteId) => {};
 
   constructor() { }
 
@@ -30,7 +30,9 @@ export class TodoitemComponent implements OnInit {
       this.todo.complete = true;
     }
   }
-  deleteItem(){
+
+  deleteItem() {
     this.onSelection(this.todo.id);
   }
+
 }

@@ -11,7 +11,6 @@ export class TodolistComponent implements OnInit {
   todos: Todo[];
   name = '';
   id = 5;
-  			 k;
 
   ngOnInit() {
     this.todos = [
