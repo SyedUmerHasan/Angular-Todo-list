@@ -1,18 +1,17 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { Todo } from '../model/Todo';
-import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
   styleUrls: ['./todolist.component.css']
 })
-
 export class TodolistComponent implements OnInit {
+  constructor() {}
   todos: Todo[];
   name = '';
   id = 5;
-  constructor() { }
+  			 k;
 
   ngOnInit() {
     this.todos = [
@@ -41,20 +40,17 @@ export class TodolistComponent implements OnInit {
   onClick() {
     const someText = this.name.replace(/(\r\n|\n|\r)/gm, '');
     if (someText === '') {
-
     } else {
-      this.todos.push(
-        {
-          id: this.id++,
-          title: this.name,
-          complete: false
-        });
+      this.todos.push({
+        id: this.id++,
+        title: this.name,
+        complete: false
+      });
       this.name = '';
     }
   }
+
   onSelectUser = (deleteId: number) => {
-    this.todos =  this.todos.filter(item => item.id !== deleteId);
+    this.todos = this.todos.filter(item => item.id !== deleteId);
   }
-
-
 }
